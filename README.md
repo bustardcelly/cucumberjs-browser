@@ -1,6 +1,6 @@
 Introduction
 ---
-| CLI tool for generating Cucumber Specs to run in a web browser
+> CLI tool for generating Cucumber Specs to run in a web browser
 
 Installation
 ---
@@ -14,17 +14,17 @@ Usage
 cucumberjs-browser [-o outdir] [-tmpl template] [-features features] [-f format]
 ```
 
-## outdir
+### outdir
 The directory to generate the web-based cucumber task-runner.
 
 _Default:_ __/browser-cukes__
 
-## template
+### template
 The default template to use in generating the main task-runner page.
 
 _Default:_ [__/template/cucumber-testrunner.template__](https://github.com/bustardcelly/cucumberjs-browser/template/cucumber-testrunner.template)
 
-## features
+### features
 The directory path for the Cucumber feature specs.
 
 This location is used in globbing and bundling support and step files from the following locations under the directory:
@@ -34,7 +34,7 @@ This location is used in globbing and bundling support and step files from the f
 
 _Default:_ __/features__
 
-## format
+### format
 The format to provide in the browser.
 
 Formats are delivered by assigning a listener to the CucumberJS runtime in the browser. Currently, these listeners are internally to this library and are bundled and deployed to the specified output directory. In the future I would like to open up the possibility of assigning custom formatters/listeners.
