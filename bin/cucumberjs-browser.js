@@ -34,7 +34,6 @@ require('colors');
 var cleandir = function cleandir(dir, callback) {
   fs.exists(dir, function(exists) {
     if(exists) {
-      console.log(('rm -rf ' + dir + '...').white);
       rimraf(dir, callback);
     }
     else {
@@ -48,7 +47,6 @@ var createdir = function createdir(dir, callback) {
     if(error) {
       console.log(('Error in clean of ' + dir + ': ' + error).red);
     }
-    console.log(('mkdir ' + dir + '...').white);
     mkdirp(dir, callback);
   });
 };

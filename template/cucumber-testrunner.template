@@ -22,8 +22,10 @@
         // Need to concat all support + step_definitions, and export as a function
         var support = function() {
           this.Given = this.When = this.Then = this.defineStep;
-          
-          this.World = window['world'].World;
+          // Would be put on window if /support/world found.
+          if('world' in window) {
+            this.World = window['world'].World;
+          }
           <% _.each(steps, function(step) { %>
           window['<%= step.name %>'].call(this);
           <% }); %>

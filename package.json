@@ -29,7 +29,9 @@
     }
   ],
   "bin": "./bin/cucumberjs-browser.js",
-  "scripts": {},
+  "scripts": {
+    "test": "node node_modules/.bin/cucumber-js"
+  },
   "dependencies": {
     "cucumber": "~0.3.3",
     "browserify": "~3.24.11",
@@ -39,10 +41,9 @@
     "lodash": "~2.4.1",
     "string": "~1.8.0",
     "tape": "~2.4.2",
-    "colors": "~0.6.2"
+    "colors": "~0.6.2",
+    "minimist": "0.0.5"
   },
   "devDependencies": {
-    "node-watch": "~0.3.4",
-    "minimist": "0.0.5"
   }
 }
