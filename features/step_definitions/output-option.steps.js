@@ -28,7 +28,7 @@ module.exports = function() {
 
   this.Then(/^The directory '(.*)' is not accessible$/, function(tmpdir, callback) {
     assert.equal(fs.existsSync(tmpdir), false, 'Temp directory created for generation is not removed: ' + tmpdir + '.');
-    callback();
+    rimraf(outputdir, callback);
   });
 
 };
