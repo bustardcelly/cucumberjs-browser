@@ -1,0 +1,48 @@
+{
+  "name": "cucumberjs-browser",
+  "version": "0.1.0",
+  "description": "CLI for generating browser-based cucumber runner.",
+  "author": {
+    "name": "Todd Anderson",
+    "email": "toddanderson@taanderson.com",
+    "url": "http://custardbelly.com/blog"
+  },
+  "keywords": [
+    "todd anderson",
+    "cucumberjs",
+    "browser",
+    "bdd",
+    "tdd"
+  ],
+  "homepage": "https://github.com/bustardcelly/cucumberjs-browser",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bustardcelly/cucumberjs-browser"
+  },
+  "bugs": {
+    "url": "https://github.com/bustardcelly/cucumberjs-browser/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/bustardcelly/cucumberjs-browser/LICENSE-MIT"
+    }
+  ],
+  "bin": "./bin/cucumberjs-browser.js",
+  "scripts": {},
+  "dependencies": {
+    "cucumber": "~0.3.3",
+    "browserify": "~3.24.11",
+    "glob": "~3.2.8",
+    "rimraf": "~2.2.6",
+    "mkdirp": "~0.3.5",
+    "lodash": "~2.4.1",
+    "string": "~1.8.0",
+    "tape": "~2.4.2",
+    "colors": "~0.6.2"
+  },
+  "devDependencies": {
+    "node-watch": "~0.3.4",
+    "minimist": "0.0.5"
+  }
+}
