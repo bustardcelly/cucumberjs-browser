@@ -22,7 +22,7 @@ _Default:_ __/browser-cukes__
 ### template
 The default template to use in generating the main task-runner page.
 
-_Default:_ [__/template/cucumber-testrunner.template__](https://github.com/bustardcelly/cucumberjs-browser/template/cucumber-testrunner.template)
+_Default:_ [/template/cucumber-testrunner.template](https://github.com/bustardcelly/cucumberjs-browser/blob/master/template/cucumber-testrunner.template)
 
 ### features
 The directory path for the Cucumber feature specs.
