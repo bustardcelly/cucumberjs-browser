@@ -45,6 +45,7 @@
     "minimist": "0.0.5"
   },
   "devDependencies": {
-    "zombie": "~2.0.0-alpha27"
+    "zombie": "~2.0.0-alpha27",
+    "connect": "~2.12.0"
   }
 }

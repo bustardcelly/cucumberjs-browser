@@ -11,7 +11,7 @@ npm  install -g cucumberjs-browser
 Usage
 ---
 ```
-cucumberjs-browser [-o outdir] [-tmpl template] [-features features] [-f format]
+cucumberjs-browser [-o outdir] [-f format] [--tmpl template] [--features features]
 ```
 
 ### outdir

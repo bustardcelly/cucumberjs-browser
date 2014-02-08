@@ -12,7 +12,7 @@
     <% }; %>
   </head>
   <body>
-    <p>hello, world</p>
+    <p>hello, cucumberjs-browser!</p>
     <script>
       (function(window) {
         

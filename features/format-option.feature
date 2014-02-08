@@ -4,12 +4,12 @@ Feature: Format option generates target listener
   So that I can view failing and passing specs
 
   Scenario: Format option provided generates file
-    Given I invoke the tool with format option 'ui'
+    Given I invoke the tool with format option 'tap'
     When The tool is finished
     Then The target format listener lib is placed in the 'script' directory
 
   Scenario: Format library is loaded in browser
-    Given I invoke the tool with format option 'ui'
+    Given I invoke the tool with format option 'tap'
     When The tool is finished
     Then The listener is accessible on the window with global name 'cukelistener'
     And Invokable using instance()

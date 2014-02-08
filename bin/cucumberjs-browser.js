@@ -17,12 +17,11 @@ var tmplModel = {
 };
 
 var tempdir = path.resolve(__dirname, '../.tmp');
-// -o output-dir, -tmpl template, -f features, -f format
 var format = args.f;
 var outdir = args.o || process.cwd() + '/browser-cukes';
 var tmplPath = args.tmpl || path.resolve(__dirname, '../template/cucumber-testrunner.template');
 var featuresPath = args.features || process.cwd() + '/features';
-// -r steps -t tags
+//TODO: -r steps -t tags
 
 var htmlTemplate = require('../lib/tmpl');
 var listenerify = require('../lib/listenerify');
