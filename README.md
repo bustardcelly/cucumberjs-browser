@@ -4,6 +4,8 @@ Introduction
 
 Installation
 ---
+[![Build Status](https://travis-ci.org/bustardcelly/cucumberjs-browser.png?branch=master)](https://travis-ci.org/bustardcelly/cucumberjs-browser)
+
 ```
 npm  install -g cucumberjs-browser
 ```
