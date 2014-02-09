@@ -37,7 +37,8 @@ var World = function World(callback) {
   this.runCli = function(options, callback) {
     var cli = child_process
                 .spawn('node', ['bin/cucumberjs-browser.js', 
-                                '--features', path.resolve(__dirname, '../../fixtures/features')
+                                '--features', path.resolve(__dirname, '../../fixtures/features'),
+                                '--tmpl', path.resolve(__dirname, '../../fixtures/template/index.html'),
                                 ].concat(options))
                 .on('exit', function() {
                   cli.kill();

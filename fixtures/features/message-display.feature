@@ -4,6 +4,6 @@ Feature: Message Display
   So I can be notified of actions
 
   Scenario: Button adds message
-    Given I am on the hom page
+    Given I am on the home page
     When I click the add-message button
     Then I am shown a 'hello, world' message

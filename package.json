@@ -42,7 +42,8 @@
     "string": "~1.8.0",
     "tape": "~2.4.2",
     "colors": "~0.6.2",
-    "minimist": "0.0.5"
+    "minimist": "0.0.5",
+    "when": "~2.8.0"
   },
   "devDependencies": {
     "zombie": "~2.0.0-alpha27",

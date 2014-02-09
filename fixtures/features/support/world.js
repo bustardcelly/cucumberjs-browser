@@ -1,3 +1,4 @@
+/*global window*/
 'use strict';
 
 var World = function(callback) {
@@ -7,6 +8,17 @@ var World = function(callback) {
     // stubbed.
   };
 
+  this.query = function(selector) {
+    return this.window.document.querySelector(selector);
+  };
+
+  this.dispatchClickEvent = function(element) {
+    var event = this.window.document.createEvent('MouseEvents');
+    event.initEvent('click', true, true);
+    element.dispatchEvent(event);
+  };
+
   callback();
-}
+};
+
 module.exports.World = World;

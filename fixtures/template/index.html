@@ -12,7 +12,21 @@
     <% }; %>
   </head>
   <body>
-    <p>hello, cucumberjs-browser!</p>
+    <div id="message-field"></div>
+    <button id="add-message-button">add message</button>
+    <button id="remove-message-button">remove message</button>
+    <script>
+      var addButton = window.document.querySelector('#add-message-button');
+      var removeButton = window.document.querySelector('#remove-message-button');
+      var messageField = window.document.querySelector('#message-field');
+
+      addButton.addEventListener('click', function() {
+        messageField.innerHTML = '<p>hello, world</p>';
+      }, false);
+      removeButton.addEventListener('click', function() {
+        messageField.innerHTML = '<p></p>';
+      });
+    </script>
     <script>
       (function(window) {
         
@@ -33,7 +47,7 @@
 
         var runtime = Cucumber(features, support);
         <% if(listener.exists) { %>
-        runtime.attachListener(window.cukelistener.instance());
+          runtime.attachListener(window.cukelistener.instance());
         <% }; %>
         runtime.start(function(){
           <% if(listener.exists) { %>
