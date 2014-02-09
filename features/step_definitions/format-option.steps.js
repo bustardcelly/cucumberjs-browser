@@ -16,7 +16,8 @@ module.exports = function() {
 
   this.Then(/^The target format listener lib is placed in the 'script' directory$/, function(callback) {
     var filepath = path.resolve(this.outdir, 'script', formatType + '-listener.js');
-    assert.equal(fs.existsSync(filepath), true, 'Listener library not regenerated at expected location: ' + filepath + '.');
+    assert.equal(fs.existsSync(filepath), true,
+      'Listener library not regenerated at expected location: ' + filepath + '.');
     callback();
   });
 
@@ -26,7 +27,8 @@ module.exports = function() {
         assert.equal(true, false, 'Browser failed: ' + error);
       }
       else {
-        assert.equal('cukelistener' in window, true, 'Access to listener library should be set as global name \'cukelistener\' on the window object.');
+        assert.equal('cukelistener' in window, true,
+          'Access to listener library should be set as global name \'cukelistener\' on the window object.');
       }
     }, callback);
   });
@@ -37,7 +39,8 @@ module.exports = function() {
         assert.equal(true, false, 'Browser failed: ' + error);
       }
       else {
-        assert.notEqual(window.cukelistener.instance(), undefined, 'Access to listener instance should be through instance() method.');
+        assert.notEqual(window.cukelistener.instance(), undefined,
+          'Access to listener instance should be through instance() method.');
       }
     }, callback);
   });

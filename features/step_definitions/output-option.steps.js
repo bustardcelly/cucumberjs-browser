@@ -15,12 +15,14 @@ module.exports = function() {
   });
 
   this.Then(/^The target directory is accessible at the provided location$/, function(callback) {
-    assert.equal(fs.existsSync(this.outdir), true, 'Output directory not generated properly: ' + this.outdir + '.');
+    assert.equal(fs.existsSync(this.outdir), true,
+      'Output directory not generated properly: ' + this.outdir + '.');
     callback();
   });
 
   this.Then(/^The directory '(.*)' is not accessible$/, function(tmpdir, callback) {
-    assert.equal(fs.existsSync(tmpdir), false, 'Temp directory created for generation is not removed: ' + tmpdir + '.');
+    assert.equal(fs.existsSync(tmpdir), false,
+      'Temp directory created for generation is not removed: ' + tmpdir + '.');
     callback();
   });
 

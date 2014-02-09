@@ -1,12 +1,40 @@
 Introduction
 ---
-> CLI tool for generating Cucumber Specs to run in a web browser
+> CLI tool for generating [Cucumber](https://github.com/cucumber/cucumber-js) Specs to run in a web browser
 
 Installation
 ---
 ```
 npm  install -g cucumberjs-browser
 ```
+
+Why
+---
+There are a few examples out in the wild that demonstrate how to write [CucumberJS](https://github.com/cucumber/cucumber-js) specs _in_ the browser and/or _for_ the browser:
+
+* [HTML example from CucumberJS](https://github.com/cucumber/cucumber-js/tree/master/example)
+* [cucumberjs-html](https://github.com/cucumber/cucumber-html)
+* [karma-cucumberjs](https://github.com/s9tpepper/karma-cucumberjs)
+
+Good libraries and examples, but I wanted to be able to write my feature specs, support and step definitions as I normally would that are run under the CucumberJS CLI for node, and have them simply execute in the browser without having to modify them to fit another runtime or environment.
+
+Additionally, I wanted to be able to define custom listeners that will provide feedback from your run specs dependent on my development needs and CI endpoint.
+
+### Note:
+As of February 9th, 2014, there is only the following listeners that can be assigned:
+
+* TAP (using the node-tap module)
+* UI (basic example of printing specs to DOM)
+
+_More to come..._
+
+How?
+---
+The cucumberjs-browser cli tool bundles feature specs, support files and step definitions into standalone [browserify](http://browserify.org/)-ied modules. 
+
+These references are injected into a testrunner template which instantiated a new [CucumberJS](https://github.com/cucumber/cucumber-js) runtime when the testrunner is loaded in a browser. When a format listener is defined, the page and/or console are updated as specs are run.
+
+All this is donw without having to change the way you write your specs as you normally do!
 
 Usage
 ---
@@ -20,7 +48,7 @@ The directory to generate the web-based cucumber task-runner.
 _Default:_ __/browser-cukes__
 
 ### template
-The default template to use in generating the main task-runner page.
+The default template to use in generating the main task-runner page. Most likely you will want to provide your own custom template that also loads your projects libraries and stylesheets. There is a default template that should be used as an example of what is required to properly run the specs in a browser.
 
 _Default:_ [/template/cucumber-testrunner.template](https://github.com/bustardcelly/cucumberjs-browser/blob/master/template/cucumber-testrunner.template)
 
@@ -39,16 +67,12 @@ The format to provide in the browser.
 
 Formats are delivered by assigning a listener to the CucumberJS runtime in the browser. Currently, these listeners are internally to this library and are bundled and deployed to the specified output directory. In the future I would like to open up the possibility of assigning custom formatters/listeners.
 
-Possible values:
+Possible values (_as of February 9th, 2014_):
 
 * ui
 * tap
 
 _Default:_ __none__
-
-How?
----
-The cucumberjs-browser cli tool bundles feature specs, support files and step definitions into standalone browserified modules. These references are injected into a testrunner template which instantiated a new CucumberJS runtime when the testrunner is loaded in a browser. When a format listener is defined, the page and/or console are updated as specs are run.
 
 License
 ---
