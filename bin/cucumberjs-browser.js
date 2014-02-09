@@ -7,7 +7,7 @@ var when = require('when');
 var parseArgs = require('minimist');
 var args = parseArgs(process.argv.slice(2));
 
-var tempdir = path.resolve(__dirname, '../.tmp');
+var tempdir = path.resolve(process.cwd(), '../.tmp');
 var format = args.f;
 var outdir = args.o || process.cwd() + '/browser-cukes';
 var tmplPath = args.tmpl || path.resolve(__dirname, '../template/cucumber-testrunner.template');
@@ -18,6 +18,9 @@ var htmlTemplate = require('../lib/tmpl');
 var listenerify = require('../lib/listenerify');
 var featurify = require('../lib/featurify');
 var stepify = require('../lib/stepify');
+
+var pkg = require(path.resolve(__dirname, '../package.json'));
+var msgPrepend = '[cucumberjs-browser ' + pkg.version + ']';
 
 require('colors');
 
@@ -62,6 +65,7 @@ var bundleFeatures = function bundleFeatures() {
         dfd.reject(err || error);
       }
       else {
+        console.log((msgPrepend + ' Features bundled successfully.').cyan);
         dfd.resolve(tmplModel);
       }
     });
@@ -76,6 +80,7 @@ var bundleSteps = function bundleSteps(tmplData) {
       dfd.reject(error);
     }
     else {
+      console.log((msgPrepend + ' Steps bundled successfully.').cyan);
       dfd.resolve(tmplData);
     }
   });
@@ -89,6 +94,7 @@ var bundleListener = function bundleListener(tmplData) {
       dfd.reject(error);
     }
     else {
+      console.log((msgPrepend + ' Listener bundled successfully.').cyan);
       dfd.resolve(tmplData);
     }
   });
@@ -103,6 +109,7 @@ var generateTemplate = function generateTemplate(tmplData) {
       dfd.reject(error);
     }
     else {
+      console.log((msgPrepend + ' Template generated successfully.').cyan);
       dfd.resolve(tmplData);
     }
   });
@@ -114,17 +121,20 @@ var copyCucumberLib = function copyCucumberLib(tmplData) {
   mkdirp.sync(outdir + '/lib');
   fs.createReadStream(path.resolve(__dirname, '../node_modules/cucumber/release/cucumber.js'))
     .pipe(fs.createWriteStream(path.resolve(outdir, 'lib/cucumber.js')))
-    .on('end', function(error) {
+    .on('close', function(error) {
       if(error) {
         dfd.reject(error);
       }
       else {
+        console.log((msgPrepend + ' CucumberJS library transferred successfully.').cyan);
         dfd.resolve(tmplData);
       }
     });
   return dfd.promise;
 };
 
+var start = new Date().getTime();
+console.log((msgPrepend + ' Started...').white);
 createdir(tempdir)
   .then(function() {
     return createdir(outdir);
@@ -134,10 +144,10 @@ createdir(tempdir)
   .then(bundleListener)
   .then(generateTemplate)
   .then(copyCucumberLib)
+  .then(function() {
+    var elapsed = ((new Date().getTime() - start)/60).toFixed(2);
+    console.log((msgPrepend + ' Completed: ' + elapsed.toString() + ' seconds.').white);
+  })
   .catch(function(error) {
-    console.log(('Error in generating browser-based cukes: ' + error).red);
-  })
-  .done(function() {
-    console.log(('Complete').cyan);
-  })
-  
+    console.log((msgPrepend + ' Error in generating browser-based cukes: ' + error).red);
+  });
