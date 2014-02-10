@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <script src="lib/cucumber.js"></script>
     <!--<script src="/testem.js"></script>-->
     <script src="features.js"></script>
@@ -9,6 +10,35 @@
     <% }); %>
     <% if(listener.exists) { %>
       <script src="script/<%= listener.filename %>"></script>
+    <% }; %>
+    <% if(listener.exists && /^ui?/i.test(listener.filename)) { %>
+    <style type="text/css">
+      .cukes-container {
+        margin: 0;
+        font-size: 1em;
+      }
+      .cuke-feature {
+        padding: 1em;
+        margin-bottom: 1em;
+        background-color: beige;
+      }
+      .cuke-step {
+        margin: 0.5em 0;
+      }
+      .cuke-step-pending, .cuke-step-skipped {
+        color: rgb(184, 174, 103);
+      }
+      .cuke-step-pass {
+        color: rgb(119, 184, 103);
+      }
+      .cuke-step-fail {
+        color: rgb(184, 103, 103);
+      }
+      .cuke-fail-description {
+        padding: 1em;
+        word-break: break-word;
+      }
+    </style>
     <% }; %>
   </head>
   <body>
