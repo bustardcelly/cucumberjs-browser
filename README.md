@@ -10,12 +10,12 @@ Installation
 npm  install -g cucumberjs-browser
 ```
 
-Why
+Why?
 ---
 There are a few examples out in the wild that demonstrate how to write [CucumberJS](https://github.com/cucumber/cucumber-js) specs _in_ the browser and/or _for_ the browser:
 
 * [HTML example from CucumberJS](https://github.com/cucumber/cucumber-js/tree/master/example)
-* [cucumberjs-html](https://github.com/cucumber/cucumber-html)
+* [cukecipes](https://github.com/jbpros/cukecipes)
 * [karma-cucumberjs](https://github.com/s9tpepper/karma-cucumberjs)
 
 Good libraries and examples, but I wanted to be able to write my feature specs, support and step definitions as I normally would that are run under the CucumberJS CLI for node, and have them simply execute in the browser without having to modify them to fit another runtime or environment.
