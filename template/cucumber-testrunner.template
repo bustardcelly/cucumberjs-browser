@@ -9,7 +9,7 @@
     <script src="<%= module.filepath %>"></script>
     <% }); %>
     <% if(listener.exists) { %>
-      <script src="script/<%= listener.filename %>"></script>
+    <script src="script/<%= listener.filename %>"></script>
     <% }; %>
     <% if(listener.exists && /^ui?/i.test(listener.filename)) { %>
     <style type="text/css">
