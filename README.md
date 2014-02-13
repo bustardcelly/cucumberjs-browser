@@ -22,7 +22,7 @@ Good libraries and examples, but I wanted to be able to write my feature specs, 
 
 Additionally, I wanted to be able to define custom listeners that will provide feedback from your run specs dependent on my development needs and CI endpoint.
 
-## Further Reading
+### Further Reading
 A few article have been written with further details on incorporating into your project and test automation routines:
 
 * [BDD in Javascript: CucumberJS and The Browser](http://custardbelly.com/blog/blog-posts/2014/02/10/cucumberjs-tests-browser/index.html)
