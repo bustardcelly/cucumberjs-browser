@@ -29,10 +29,11 @@ A few articles have been written with further details on incorporating into your
 * [BDD in Javascript: CucumberJS and The Browser II](http://custardbelly.com/blog/blog-posts/2014/02/12/cucumberjs-browser-update/index.html)
 
 ### Note:
-As of February 9th, 2014, there is only the following listeners that can be assigned:
+As of February 15th, 2014, there is only the following listeners that can be assigned:
 
 * TAP (using the node-tap module)
 * UI (basic example of printing specs to DOM)
+* SAUCELABS (uses QUnit reporting model to hook into saucelabs reporter)
 
 _More to come..._
 
@@ -75,10 +76,11 @@ The format to provide in the browser.
 
 Formats are delivered by assigning a listener to the CucumberJS runtime in the browser. Currently, these listeners are internally to this library and are bundled and deployed to the specified output directory. In the future I would like to open up the possibility of assigning custom formatters/listeners.
 
-Possible values (_as of February 9th, 2014_):
+Possible values (_as of February 15th, 2014_):
 
 * ui
 * tap
+* saucelabs
 
 _Default:_ __none__
 
