@@ -29,7 +29,8 @@ var tmplModel = {
   modules: [],
   listener: {
     exists: false,
-    filename: ''
+    filename: '',
+    format: null
   }
 };
 

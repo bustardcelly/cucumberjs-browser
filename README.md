@@ -34,6 +34,7 @@ As of February 15th, 2014, there is only the following listeners that can be ass
 * TAP (using the node-tap module)
 * UI (basic example of printing specs to DOM)
 * SAUCELABS (uses QUnit reporting model to hook into saucelabs reporter)
+* TESTEM (patches Testem.emit to emulate like qunit adapter)
 
 _More to come..._
 
@@ -81,6 +82,7 @@ Possible values (_as of February 15th, 2014_):
 * ui
 * tap
 * saucelabs
+* testem
 
 _Default:_ __none__
 
