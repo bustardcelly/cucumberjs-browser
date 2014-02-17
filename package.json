@@ -1,6 +1,6 @@
 {
   "name": "cucumberjs-browser",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "CLI for generating browser-based cucumber runner.",
   "author": {
     "name": "Todd Anderson",
