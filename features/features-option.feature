@@ -5,5 +5,5 @@ Feature: User-defined features option consumes and bundles features
 
   Scenario: Features option used in generating features bundle
     Given I invoke the tool with custom features option
-    When The tool is finished
+    When I use double-quotes like "such"
     Then The bundled features are accessible on the window global

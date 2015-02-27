@@ -7,7 +7,7 @@ var when = require('when');
 var parseArgs = require('minimist');
 var args = parseArgs(process.argv.slice(2));
 
-var tempdir = path.resolve(process.cwd(), '../.tmp');
+var tempdir = path.resolve(process.cwd(), '.cucumberjs-browser');
 var format = args.f;
 var outdir = args.o || process.cwd() + '/browser-cukes';
 var tmplPath = args.tmpl || path.resolve(__dirname, '../template/cucumber-testrunner.template');
